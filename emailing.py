@@ -4,6 +4,7 @@ from email.message import EmailMessage
 import smtplib
 
 def send_email(image_path):
+  print("send_email function started")
   
   email_message=EmailMessage()
   email_message['Subject']='New object showed up!'
@@ -28,7 +29,7 @@ def send_email(image_path):
 
   gmail.sendmail(username,receiver,email_message.as_string())
   gmail.quit()
-  
+  print("send_email function ended.")
 if __name__=='__main__':
   send_email(image_path="images/19.png")
 
